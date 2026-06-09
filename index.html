@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossa História ❤️</title>
+<style>
+body{
+    margin:0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+    color:#fff;
+    text-align:center;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+h1{
+    font-size:3rem;
+    margin-top:20px;
+}
+.subtitle{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+.counter{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:30px;
+    margin:30px 0;
+}
+.time{
+    font-size:2rem;
+    font-weight:bold;
+    line-height:1.8;
+}
+.message{
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    padding:25px;
+    margin:30px 0;
+    font-size:1.3rem;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-top:30px;
+}
+.gallery img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+.footer{
+    margin-top:40px;
+    font-size:1.4rem;
+    font-weight:bold;
+}
+.heart{
+    font-size:50px;
+    animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="heart">❤️</div>
+<h1>Nosso Amor</h1>
+<p class="subtitle">
+Desde 22 de Setembro de 2024 às 15:30
+</p>
+<div class="counter">
+<h2>Estamos juntos há:</h2>
+<div class="time" id="contador"></div>
+</div>
+<div class="message">
+<p>
+Oi amor, passando para lembrar que te amo cada dia mais.
+</p>
+<p>
+Independente de tudo, eu sempre irei te amar.
+</p>
+<p>
+Cada segundo ao seu lado torna minha vida mais feliz e especial.
+</p>
+</div>
+<h2>Nossos Momentos 📸</h2>
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+<div class="footer">
+✨ E que esse contador nunca pare de crescer. ✨
+</div>
+</div>
+<script>
+const inicio = new Date("2024-09-22T15:30:00");
+function atualizarContador(){
+const agora = new Date();
+let diff = agora - inicio;
+const segundos = Math.floor(diff/1000)%60;
+const minutos = Math.floor(diff/(1000*60))%60;
+const horas = Math.floor(diff/(1000*60*60))%24;
+const dias = Math.floor(diff/(1000*60*60*24));
+document.getElementById("contador").innerHTML =
+`${dias} dias<br>
+${horas} horas<br>
+${minutos} minutos<br>
+${segundos} segundos`;
+}
+setInterval(atualizarContador,1000);
+atualizarContador();
+</script>
+</body>
+</html
